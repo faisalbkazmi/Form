@@ -1,0 +1,63 @@
+<?php 
+    $collectionData = $block->getCollectModel();
+?>
+
+<div id="tfheader">
+    <form class="form" action="" method="post" id="search-form">
+        <input name="data[srch]" id="srch" type="text" class="input-text" title="<?php echo __('Search') ?>" data-validate="{required:true}" value="<?php if(!empty($block->getSearchTerm())){ echo $block->getSearchTerm(); } ?>" style="width: 250px !important; height: 35px !important;" placeholder="<?php echo __('Search Here'); ?>" required>
+    </form>
+    <div class="tfclear"></div>
+</div>
+
+<form class="form" action="<?php echo $block->getAddUrl()?>">
+    <table class="data table table-order-items history" id="my-orders-table">
+
+        <div class="table-wrapper orders-history">
+
+
+            <thead>
+                <tr>
+                    <th> Id </th>
+                    <th> Name </th>
+                    <th> Message </th>
+                    <th> email </th>
+                    <th> Delete Item</th>
+                    <th> Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($collectionData as $item) : ?>
+                <tr>
+                    <td>
+                        <?php echo $item['id']; ?>
+                    </td>
+                    <td>
+                        <?php echo $item['name']; ?>
+                    </td>
+                    <td>
+                        <?php echo $item['message']; ?>
+                    </td>
+                    <td>
+                        <?php echo $item['email']; ?>
+                    </td>
+                    <td>
+                        <a href="<?php echo $block->getDeleteUrl($item['id']); ?>">
+                            <?php echo __('Delete Item') ?>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="<?php echo $block->getEditUrl($item['id']); ?>">
+                            <?php echo __('Edit') ?>
+                        </a>
+                    </td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+    </table>
+
+
+    <div class="actions-toolbar">
+        <div class="primary"><input type="submit" class="action submit primary" name="" id="send2" value="<?php echo __('Add Item') ?>"></div>
+    </div>
+    </div>
+</form>

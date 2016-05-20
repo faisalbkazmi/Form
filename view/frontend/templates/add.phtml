@@ -1,0 +1,35 @@
+<div class="block block-customer-login">
+    <div class="block-title">
+        <h2><?php echo __('Insert Data'); ?></h2>
+    </div>
+    <div class="block-content" aria-labelledby="block-heading">
+        <form class="form" action="" method="post" id="edit-form" data-mage-init='{"validation":{}}'>
+            <fieldset class="fieldset" data-hasrequired="<?php echo __('* Required Fields') ?>">
+
+                <div class="field title required">
+                    <label class="label" for="title"><span><?php echo __('Name') ?></span></label>
+                    <div class="control">
+                        <input name="data[name]" id="name" type="text" class="input-text" title="<?php echo __('Name') ?>" data-validate="{required:true}">
+                    </div>
+                </div>
+                <div class="field title required">
+                    <label class="label" for="title"><span><?php echo __('Message') ?></span></label>
+                    <div class="control">
+                        <input name="data[message]" id="message" type="text" class="input-text" title="<?php echo __('Message') ?>" data-validate="{required:true}">
+                    </div>
+                </div>
+                <div class="field title required">
+                    <label class="label" for="title"><span><?php echo __('Email') ?></span></label>
+                    <div class="control">
+                        <input name="data[email]" id="title" type="email" class="input-text" title="<?php echo __('Email') ?>" data-validate="{required:true}">
+                    </div>
+                </div>
+
+                <div class="actions-toolbar">
+                    <div class="primary"><input type="submit" class="action login primary" name="data[submit]" id="send2" value="<?php echo __('Save') ?>"></div>
+
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>

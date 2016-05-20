@@ -1,0 +1,39 @@
+<?php 
+$data = $block->getRowData();
+?>
+<div class="block block-customer-login">
+    <div class="block-title">
+        <h2><?php echo __('Edit Data'); ?></h2>
+    </div>
+    <div class="block-content" aria-labelledby="block-heading">
+        <form class="form" action="" method="post" id="edit-form" data-mage-init='{"validation":{}}'>
+            <fieldset class="fieldset" data-hasrequired="<?php echo __('* Required Fields') ?>">
+
+                <div class="field title required">
+                    <label class="label" for="name"><span><?php echo __('Name') ?></span></label>
+                    <div class="control">
+                        <input name="data[name]" id="name" type="text" class="input-text" title="<?php /* @escapeNotVerified */ echo __('Name') ?>" data-validate="{required:true}" value="<?php echo $data['name']; ?>">
+                    </div>
+                </div>
+                <div class="field title required">
+                    <label class="label" for="message"><span><?php echo __('Message') ?></span></label>
+                    <div class="control">
+                        <input name="data[message]" id="message" type="text" class="input-text" title="<?php echo __('message') ?>" data-validate="{required:true}" value="<?php echo $data['message']; ?>">
+                    </div>
+                </div>
+                <div class="field title required">
+                    <label class="label" for="email"><span><?php echo __('Email') ?></span></label>
+                    <div class="control">
+                        <input name="data[email]" id="email" type="email" class="input-text" title="<?php echo __('Email') ?>" data-validate="{required:true}" value="<?php echo $data['email']; ?>">
+                    </div>
+                </div>
+
+                <div class="actions-toolbar">
+                    <div class="primary"><input type="submit" class="action login primary" name="data[submit]" id="send2" value="<?php echo __('Save') ?>"></div>
+
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+</div>
