@@ -21,8 +21,13 @@ class Save extends \Magento\Backend\App\Action
     {
         
         $post = $this->getRequest()->getPostValue();
-        // print_r($post); die();
         $test = $this->_testFactory->create();
+         
+        if(!empty($post['id'])){
+           $test->load($post['id']);
+       }
+        
+        
         $test->setName($post['name']);
         $test->setMessage($post['message']);
         $test->setEmail($post['email']);

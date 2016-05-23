@@ -38,7 +38,7 @@ class Main extends \Magento\Backend\Block\Widget\Form\Generic implements \Magent
         $form->setHtmlIdPrefix('hello_');
         $fieldset = $form->addFieldset('base_fieldset', ['legend' => __('Page Information')]);
         if ($model->getId()) {
-            $fieldset->addField('excellence_hello_test_id', 'hidden', ['name' => 'excellence_hello_test_id']);
+            $fieldset->addField('id', 'hidden',['name' => 'id']);
         }
         $fieldset->addField(
             'name',
@@ -72,9 +72,10 @@ class Main extends \Magento\Backend\Block\Widget\Form\Generic implements \Magent
            ]
 
          );
+        
 
         $form->setValues($model->getData());
-         
+
         $this->setForm($form);
         return parent::_prepareForm();
     }

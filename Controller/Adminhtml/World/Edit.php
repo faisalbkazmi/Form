@@ -26,6 +26,7 @@ class Edit extends \Magento\Backend\App\Action
         $model = $this->testFactory->create();
         if ($id) {
             $model->load($id);
+           
         }
         $this->registry->register('hello_edit',$model);
         
